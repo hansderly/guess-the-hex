@@ -1,10 +1,17 @@
-import { Card } from './components';
+import { Answer, Card } from './components';
 import styles from './App.module.css';
 
 function App() {
 	return (
 		<div className={styles.container}>
-			<Card />
+			<div>
+				<Card />
+				<div className={styles.answerList}>
+					<Answer />
+					<Answer />
+					<Answer />
+				</div>
+			</div>
 		</div>
 	);
 }

@@ -1,0 +1,13 @@
+.container {
+	padding: 15px 10px;
+	max-width: 70px;
+	background-color: aliceblue;
+	border-radius: 10px;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+}
+
+.container:hover {
+	border: 1px solid gray;
+}
