@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { Card } from './components';
-import styles from './App.css';
+import styles from './App.module.css';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div>
+		<div className={styles.container}>
 			<Card />
 		</div>
 	);
