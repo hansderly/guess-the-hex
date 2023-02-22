@@ -5,7 +5,7 @@ import styles from './Answer.module.css';
 const Answer = () => {
 	return (
 		<button type='button' className={styles.container}>
-			#faebd7
+			#FAEBD7
 		</button>
 	);
 };
