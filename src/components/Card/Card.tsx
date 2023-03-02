@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styles from './Card.module.css';
-interface ICard {
+export interface ICode {
 	code: string | undefined;
 }
 
-const Card = ({ code }: ICard) => {
+const Card = ({ code }: ICode) => {
 	return <div style={{...card, backgroundColor: code}}></div>;
 };
 

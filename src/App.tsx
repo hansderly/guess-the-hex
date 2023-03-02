@@ -21,9 +21,11 @@ function App() {
 				<Head />
 				<Card code={quiz?.answer} />
 				<div className={styles.answerList}>
-					<Answer />
-					<Answer />
-					<Answer />
+					{
+						quiz?.hexCodes.map(hexCode => (
+							<Answer code={hexCode} />
+						))
+					}
 				</div>
 			</div>
 		</div>

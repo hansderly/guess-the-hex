@@ -1,11 +1,12 @@
 import React from 'react';
 
 import styles from './Answer.module.css';
+import { ICode } from '../Card/Card';
 
-const Answer = () => {
+const Answer = ({ code }: ICode) => {
 	return (
 		<button type='button' className={styles.container}>
-			#FAEBD7
+			{code}
 		</button>
 	);
 };
