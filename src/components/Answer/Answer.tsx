@@ -3,9 +3,13 @@ import React from 'react';
 import styles from './Answer.module.css';
 import { ICode } from '../Card/Card';
 
-const Answer = ({ code }: ICode) => {
+interface IAnswer extends ICode {
+	onClick: () => boolean;
+}
+
+const Answer = ({ code, onClick }: IAnswer) => {
 	return (
-		<button type='button' className={styles.container}>
+		<button onClick={onClick} type='button' className={styles.container}>
 			{code}
 		</button>
 	);

@@ -15,6 +15,13 @@ function App() {
 		setQuiz(quizGenerator())
 	}, [])
 
+	const verifyAnswer = (code: string) => code === quiz?.answer;
+
+	const handleClick = (code: string) => {
+		console.log(verifyAnswer(code))
+		return verifyAnswer(code);
+	}
+
 	return (
 		<div className={styles.container}>
 			<div>
@@ -23,7 +30,7 @@ function App() {
 				<div className={styles.answerList}>
 					{
 						quiz?.hexCodes.map(hexCode => (
-							<Answer code={hexCode} />
+							<Answer key={hexCode} onClick={() => handleClick(hexCode)} code={hexCode} />
 						))
 					}
 				</div>
