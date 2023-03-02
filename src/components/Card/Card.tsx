@@ -7,7 +7,7 @@ import styles from './Card.module.css';
 import { Emoji } from '../../App';
 export interface ICode {
 	code: string | undefined;
-	display: Emoji
+	display?: Emoji
 }
 
 const Card = ({ display, code }: ICode) => {
