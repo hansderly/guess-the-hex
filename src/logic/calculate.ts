@@ -1,3 +1,4 @@
+import { IQuiz } from "../App";
 
 const generateHex = (): string[] => {
 	let quantity = 3;
@@ -18,8 +19,8 @@ const generateHex = (): string[] => {
 
 const randomIndex = (): number => Math.random() * 3 | 0;
 const chooseAnswer = (hexCodes: string[], randomNum: number): string => hexCodes[randomNum];
-const quiz = (hexCodes: string[], answer: string) => ({hexCodes, answer});
+const quiz = (hexCodes: string[], answer: string): IQuiz => ({ hexCodes, answer });
 
 const hexCodes = generateHex();
 
-export default quiz(hexCodes, chooseAnswer(hexCodes, randomIndex()));
+export default () => quiz(hexCodes, chooseAnswer(hexCodes, randomIndex()));

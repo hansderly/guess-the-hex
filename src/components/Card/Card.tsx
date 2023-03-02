@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Card.module.css';
 interface ICard {
-	code: string;
+	code: string | undefined;
 }
 
 const Card = ({ code }: ICard) => {
