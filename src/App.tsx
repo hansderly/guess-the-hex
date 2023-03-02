@@ -8,17 +8,21 @@ export interface IQuiz {
 	answer: string,
 }
 
+export type Emoji = null | 'sad' | 'happy'
+
 function App() {
 	const [quiz, setQuiz] = useState<IQuiz>()
+	const [emoji, setEmoji] = useState<Emoji>(null)
 
 	useEffect(() => {
 		setQuiz(quizGenerator())
 	}, [])
 
 	const verifyAnswer = (code: string) => code === quiz?.answer;
+	const displayEMoji = (isTrue: boolean): Emoji => isTrue ? 'happy' : 'sad';
 
 	const handleClick = (code: string) => {
-		console.log(verifyAnswer(code))
+		setEmoji(displayEMoji(verifyAnswer(code)))
 		return verifyAnswer(code);
 	}
 
@@ -26,7 +30,7 @@ function App() {
 		<div className={styles.container}>
 			<div>
 				<Head />
-				<Card code={quiz?.answer} />
+				<Card display={emoji} code={quiz?.answer} />
 				<div className={styles.answerList}>
 					{
 						quiz?.hexCodes.map(hexCode => (
