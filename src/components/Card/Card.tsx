@@ -6,7 +6,12 @@ interface ICard {
 }
 
 const Card = ({ code }: ICard) => {
-	return <div className={styles.container}></div>;
+	return <div style={{...card, backgroundColor: code}}></div>;
 };
+
+const card = {
+	padding: '200px',
+	borderRadius: '50px',
+}
 
 export default Card;
