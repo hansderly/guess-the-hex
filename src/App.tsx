@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Answer, Card, Head } from './components';
 import styles from './App.module.css';
 import quizGenerator from './logic/calculate';
+import AnswerList from './components/AnswerList/AnswerList';
 
 export interface IQuiz {
 	hexCodes: string[],
@@ -21,9 +22,11 @@ function App() {
 	const verifyAnswer = (code: string) => code === quiz?.answer;
 	const displayEMoji = (isTrue: boolean): Emoji => isTrue ? 'happy' : 'sad';
 
-	const handleClick = (code: string) => {
+	const handleClick = ({ target }: any) => {
+		const { textContent: code } = target;
 		setEmoji(displayEMoji(verifyAnswer(code)))
 		return verifyAnswer(code);
+		return true
 	}
 
 	return (
@@ -31,13 +34,7 @@ function App() {
 			<div>
 				<Head />
 				<Card display={emoji} code={quiz?.answer} />
-				<div className={styles.answerList}>
-					{
-						quiz?.hexCodes.map(hexCode => (
-							<Answer key={hexCode} onClick={() => handleClick(hexCode)} code={hexCode} />
-						))
-					}
-				</div>
+				<AnswerList quiz={quiz} onClick={(e) => handleClick(e)} />
 			</div>
 		</div>
 	);
