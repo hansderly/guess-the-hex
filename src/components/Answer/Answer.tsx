@@ -4,7 +4,7 @@ import styles from './Answer.module.css';
 import { ICode } from '../Card/Card';
 
 interface IAnswer extends ICode {
-	onClick: () => boolean;
+	onClick: (args: any) => boolean;
 }
 
 const Answer = ({ code, onClick }: IAnswer) => {
